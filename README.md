@@ -11,4 +11,4 @@ Project SpongeBob Boat: a budget build under $250 using recycled and scrap parts
 
 # Our Approach
 - Drawings
-  ![SpongeBob Boat](pictures/DrawingsSoilandlace .jpg)
+![SpongeBob Boat](pictures/DrawingsSoilandlace.jpg)
