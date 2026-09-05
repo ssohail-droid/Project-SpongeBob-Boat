@@ -8,3 +8,7 @@ Project SpongeBob Boat: a budget build under $250 using recycled and scrap parts
 - Look like SpongeBob's boat
 - One driver and one passenger
 - Drive a distance of 2 miles over varying inclines and declines
+
+# Our Approach
+- Drawings
+  ![SpongeBob Boat](pictures/DrawingsSoilandlace .jpg)
