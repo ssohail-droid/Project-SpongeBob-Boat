@@ -9,6 +9,10 @@ Project SpongeBob Boat: a budget build under $250 using recycled and scrap parts
 - One driver and one passenger
 - Drive a distance of 2 miles over varying inclines and declines
 
-# Our Approach
-- Drawings
+# Approach
 ![SpongeBob Boat](pictures/DrawingsSoilandlace.jpg)
+The priority was getting a working frame one that could safely hold two people and actually drive-before worrying about appearance.
+We started with a rectangular aluminum 4040 extrusion frame with a centre beam
+
+![SpongeBob Boat](pictures/BaciscFrame.jpeg)
+
