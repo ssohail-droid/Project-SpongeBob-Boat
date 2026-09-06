@@ -20,6 +20,9 @@ We started with a rectangular aluminum 4040 extrusion frame with a centre beam.
 - This gave us a rigid frame that could hold two people(400 lbs ~)
 - We assembled the frame with plasma-cut 90° brackets, slotted nuts, and M6 hardware 
 
-![SpongeBob Boat demo](pictures/PlamaCut.gif)
+<p align="center">
+  <img src="pictures/PlamaCut.gif" alt="SpongeBob Boat demo">
+</p>
+
 ![SpongeBob Boat](pictures/MotorWithBrak.jpg)
 
