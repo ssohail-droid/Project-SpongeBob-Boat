@@ -91,3 +91,9 @@ The OCU is the driver-facing control setup:
 <p align="center">
   <img src="pictures/BTS 7960.jpg" alt="SpongeBob Boat">
 </p>
+
+## Testing!!!
+
+<p align="center">
+  <img src="pictures/thing.gif" alt="SpongeBob Boat">
+</p>
