@@ -2,7 +2,7 @@
 
 A budget build (under $250) using recycled and scrap parts, designed to resemble SpongeBob's boat while carrying one driver and one passenger a distance of 2 miles over varying inclines and declines.
 
-![SpongeBob Boat](pictures/missing.PNG)
+![SpongeBob Boat](pictures/Creds.png)
 
 # Design Requirements
 - Total budget under $250
