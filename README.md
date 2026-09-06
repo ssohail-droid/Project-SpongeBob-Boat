@@ -24,5 +24,8 @@ We started with a rectangular aluminum 4040 extrusion frame with a centre beam.
   <img src="pictures/PlamaCut.gif" alt="SpongeBob Boat demo">
 </p>
 
+- After plasma-cutting out motor brackets from 1/8 mild steel, we mounted the recycled wheelchair motor
+- The wheelchair motor is a 24V 250W high-torque motor
+
 ![SpongeBob Boat](pictures/MotorWithBrak.jpg)
 
