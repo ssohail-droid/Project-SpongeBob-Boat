@@ -1,52 +1,49 @@
-# Project-SpongeBob-Boat
-Project SpongeBob Boat: a budget build under $250 using recycled and scrap parts, designed to look like SpongeBob's boat while carrying one driver and one passenger a distance of 2 miles over varying inclines and declines along the route.
+# Project: SpongeBob Boat
+
+A budget build (under $250) using recycled and scrap parts, designed to resemble SpongeBob's boat while carrying one driver and one passenger a distance of 2 miles over varying inclines and declines.
 
 ![SpongeBob Boat](pictures/missing.PNG)
 
-# Challenge
-- Under $250
-- Look like SpongeBob's boat
-- One driver and one passenger
-- Drive a distance of 2 miles over varying inclines and declines
+# Design Requirements
+- Total budget under $250
+- Visual theme matching SpongeBob's boat
+- Capacity for one driver and one passenger
+- Must travel 2 miles over varying terrain grade (inclines and declines)
 
 # Approach
+
 ![SpongeBob Boat](pictures/DrawingsSoilandlace.jpg)
 
-- The priority was getting a working frame one that could safely hold two people and actually drive-before worrying about appearance.
-We started with a rectangular aluminum 4040 extrusion frame with a centre beam.
+The initial priority was structural: build a frame capable of safely supporting two riders and driving reliably, before addressing aesthetics. We began with a rectangular 40x40 aluminum extrusion frame reinforced with a center beam for added rigidity.
 
 ![SpongeBob Boat](pictures/BaciscFrame.jpeg)
 
-- This gave us a rigid frame that could hold two people(400 lbs ~)
-- We assembled the frame with plasma-cut 90° brackets, slotted nuts, and M6 hardware 
+This design gave us a frame rigid enough to support two passengers (~400 lbs combined load). The frame was assembled using plasma-cut 90° brackets, slotted T-nuts, and M6 hardware throughout.
 
 <p align="center">
   <img src="pictures/PlamaCut.gif" alt="SpongeBob Boat demo">
 </p>
 
-- After plasma-cutting out motor brackets from 1/8 mild steel, we mounted the recycled wheelchair motor
-- The wheelchair motor is a 24V 250W high-torque motor
+Motor brackets were plasma-cut from 1/8" mild steel to mount a recycled wheelchair motor — a 24V, 250W high-torque unit repurposed for propulsion.
 
 <p align="center">
   <img src="pictures/MotorWithBrak.jpg" alt="SpongeBob Boat">
 </p>
 
-- At this point, we had a pretty rigid chassis for the boat!
+At this stage, the chassis was fully assembled and structurally rigid.
 
 <p align="center">
   <img src="pictures/BaseFrame.JPG" alt="SpongeBob Boat">
 </p>
 
-- A big problem we had was canting. Canting is when the wheel angles out and bends the bracket
+One issue that emerged was **canting** — where the wheel angles outward under load, bending the mounting bracket over time.
 
 <p align="center">
   <img src="pictures/CanterProb.jpg" alt="SpongeBob Boat">
 </p>
 
-- A simple solution was putting a bar between the motor mounts, which reduces canting
+The fix was a simple structural brace: adding a support bar between the two motor mounts. This tied the mounts together and significantly reduced canting under load.
 
 <p align="center">
   <img src="pictures/CanterSol.jpg" alt="SpongeBob Boat">
 </p>
-
-
