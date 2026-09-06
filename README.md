@@ -56,3 +56,12 @@ The fix was a simple structural brace: adding a support bar between the two moto
 <p align="center">
   <img src="pictures/OldconFetKaboom.jpeg" alt="SpongeBob Boat">
 </p>
+
+- So our plan B was to use the BTS7960 high-current motor driver.
+- The BTS7960 high-current motor driver was the perfect choice because of its High current rating and low cost
+- The BTS7960 can handle up to 43 AMP which is well above our motors, which draw about 20A each at max load
+
+<p align="center">
+  <img src="pictures/BTS7960 high-currentmotorDriver.jpg" alt="SpongeBob Boat">
+</p>
+
