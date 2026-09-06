@@ -48,18 +48,15 @@ The fix was a simple structural brace: adding a support bar between the two moto
   <img src="pictures/CanterSol.jpg" alt="SpongeBob Boat">
 </p>
 
+## Powertrain and Electronics
 
-## Moving on to PowerTrane and Electronics 
-
-- Originally, we used the control unit from the wheelchair, but this proved to be very unreliable, with constant errors and overheating
+Originally, we used the control unit salvaged from the wheelchair, but this proved unreliable — it produced constant errors and overheated under load.
 
 <p align="center">
   <img src="pictures/OldconFetKaboom.jpeg" alt="SpongeBob Boat">
 </p>
 
-- So our plan B was to use the BTS7960 high-current motor driver.
-- The BTS7960 high-current motor driver was the perfect choice because of its High current rating and low cost
-- The BTS7960 can handle up to 43 AMP which is well above our motors, which draw about 20A each at max load
+Our fallback was the BTS7960 high-current motor driver. It was the perfect choice for this build due to its high current rating and low cost — rated for up to 43A, well above the ~20A per motor we see at max load.
 
 <p align="center">
   <img src="pictures/BTS7960 high-currentmotorDriver.jpg" alt="SpongeBob Boat">
@@ -74,7 +71,7 @@ The boat's drive system is split into two main units: the **MDU (Motor Drive Uni
 The MDU handles all propulsion and power delivery on board the boat:
 
 - **Motors:** Two 250W 24V DC motors provide propulsion.
-- **Motor Drivers:** Each motor is controlled by its own BTS7960 high-current motor driver module, allowing independent speed and direction control per side (differential drive).
+- **Motor Drivers:** Each motor is controlled by its own BTS7960 driver module, allowing independent speed and direction control per side (differential drive).
 - **Battery:** A 24V 36Ah battery pack supplies power to both motors and the driver boards.
 - **Controller:** An Arduino UNO reads control commands and sends PWM/direction signals to the two BTS7960 drivers, translating input into motor output.
 
@@ -82,18 +79,23 @@ The MDU handles all propulsion and power delivery on board the boat:
 
 The OCU is the driver-facing control setup:
 
-- A **Logitech gamepad** is connected via **USB** to a laptop.
-- The laptop reads the gamepad input and sends drive commands to the Arduino UNO over **UART** (serial connection).
+- A **Logitech gamepad** connects via **USB** to a laptop.
+- The laptop reads gamepad input and sends drive commands to the Arduino UNO over **UART** (serial connection).
 
 ## Signal Flow
-- The laptop acts as the bridge between operator input and the motor control unit — translating joystick movement from the gamepad into serial commands that the Arduino interprets and forwards to the motor drivers.
+
+The laptop acts as the bridge between operator input and the motor control unit, translating joystick movement from the gamepad into serial commands that the Arduino interprets and forwards to the motor drivers.
 
 <p align="center">
   <img src="pictures/BTS 7960.jpg" alt="SpongeBob Boat">
 </p>
 
-## Testing!!!
+## Testing
 
 <p align="center">
   <img src="pictures/thing.gif" alt="SpongeBob Boat">
 </p>
+
+## Problems and Solutions
+- During testing, the battery wires heated up due to the 40A draw. Switching from 14 AWG to 8 AWG wire resolved the overheating.
+- Another unexpected issue: bundled wires were acting as an electromagnet. Separating the wires fixed this.
