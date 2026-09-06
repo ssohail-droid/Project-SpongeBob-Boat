@@ -47,3 +47,12 @@ The fix was a simple structural brace: adding a support bar between the two moto
 <p align="center">
   <img src="pictures/CanterSol.jpg" alt="SpongeBob Boat">
 </p>
+
+
+## Moving on to PowerTrane and Electronics 
+
+- Originally, we used the control unit from the wheelchair, but this proved to be very unreliable, with constant errors and overheating
+
+<p align="center">
+  <img src="pictures/OldconFetKaboom.jpeg" alt="SpongeBob Boat">
+</p>
