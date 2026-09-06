@@ -99,3 +99,6 @@ The laptop acts as the bridge between operator input and the motor control unit,
 ## Problems and Solutions
 - During testing, the battery wires heated up due to the 40A draw. Switching from 14 AWG to 8 AWG wire resolved the overheating.
 - Another unexpected issue: bundled wires were acting as an electromagnet. Separating the wires fixed this.
+
+## Results
+- To be decided. 
