@@ -27,18 +27,26 @@ We started with a rectangular aluminum 4040 extrusion frame with a centre beam.
 - After plasma-cutting out motor brackets from 1/8 mild steel, we mounted the recycled wheelchair motor
 - The wheelchair motor is a 24V 250W high-torque motor
 
-![SpongeBob Boat](pictures/MotorWithBrak.jpg)
+<p align="center">
+  <img src="pictures/MotorWithBrak.jpg" alt="SpongeBob Boat">
+</p>
 
 - At this point, we had a pretty rigid chassis for the boat!
 
-![SpongeBob Boat](pictures/BaseFrame.JPG)
+<p align="center">
+  <img src="pictures/BaseFrame.JPG" alt="SpongeBob Boat">
+</p>
 
 - A big problem we had was canting. Canting is when the wheel angles out and bends the bracket
 
-![SpongeBob Boat](pictures/CanterProb.jpg)
+<p align="center">
+  <img src="pictures/CanterProb.jpg" alt="SpongeBob Boat">
+</p>
 
 - A simple solution was putting a bar between the motor mounts, which reduces canting
 
-![SpongeBob Boat](pictures/CanterSol.jpg)
+<p align="center">
+  <img src="pictures/CanterSol.jpg" alt="SpongeBob Boat">
+</p>
 
 
