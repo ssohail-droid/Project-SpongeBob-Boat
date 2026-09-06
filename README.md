@@ -86,6 +86,7 @@ The OCU is the driver-facing control setup:
 - The laptop reads the gamepad input and sends drive commands to the Arduino UNO over **UART** (serial connection).
 
 ## Signal Flow
+- The laptop acts as the bridge between operator input and the motor control unit — translating joystick movement from the gamepad into serial commands that the Arduino interprets and forwards to the motor drivers.
 
 <p align="center">
   <img src="pictures/BTS 7960.jpg" alt="SpongeBob Boat">
