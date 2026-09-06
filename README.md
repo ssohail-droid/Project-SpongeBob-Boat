@@ -65,6 +65,28 @@ The fix was a simple structural brace: adding a support bar between the two moto
   <img src="pictures/BTS7960 high-currentmotorDriver.jpg" alt="SpongeBob Boat">
 </p>
 
+# Control System Architecture
+
+The boat's drive system is split into two main units: the **MDU (Motor Drive Unit)** on the boat itself, and the **OCU (Operator Control Unit)** used by the driver.
+
+## MDU (Motor Drive Unit)
+
+The MDU handles all propulsion and power delivery on board the boat:
+
+- **Motors:** Two 250W 24V DC motors provide propulsion.
+- **Motor Drivers:** Each motor is controlled by its own BTS7960 high-current motor driver module, allowing independent speed and direction control per side (differential drive).
+- **Battery:** A 24V 36Ah battery pack supplies power to both motors and the driver boards.
+- **Controller:** An Arduino UNO reads control commands and sends PWM/direction signals to the two BTS7960 drivers, translating input into motor output.
+
+## OCU (Operator Control Unit)
+
+The OCU is the driver-facing control setup:
+
+- A **Logitech gamepad** is connected via **USB** to a laptop.
+- The laptop reads the gamepad input and sends drive commands to the Arduino UNO over **UART** (serial connection).
+
+## Signal Flow
+
 <p align="center">
   <img src="pictures/BTS 7960.jpg" alt="SpongeBob Boat">
 </p>
