@@ -1,0 +1,80 @@
+// Uno + 2x BTS7960 tank drive, controlled over USB serial from a PC gamepad script
+// Protocol: send "L,R\n" where L and R are ints from -255 to 255
+// Example: "200,-200\n" = spin in place
+
+const int L_RPWM = 5;
+const int L_LPWM = 6;
+const int L_REN  = 4;
+const int L_LEN  = 7;
+
+const int R_RPWM = 9;
+const int R_LPWM = 3;
+const int R_REN  = 8;
+const int R_LEN  = 2;
+
+unsigned long lastCmdTime = 0;
+const unsigned long CMD_TIMEOUT = 500; // ms - stop motors if serial goes quiet
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(L_RPWM, OUTPUT);
+  pinMode(L_LPWM, OUTPUT);
+  pinMode(L_REN, OUTPUT);
+  pinMode(L_LEN, OUTPUT);
+
+  pinMode(R_RPWM, OUTPUT);
+  pinMode(R_LPWM, OUTPUT);
+  pinMode(R_REN, OUTPUT);
+  pinMode(R_LEN, OUTPUT);
+
+  digitalWrite(L_REN, HIGH);
+  digitalWrite(L_LEN, HIGH);
+  digitalWrite(R_REN, HIGH);
+  digitalWrite(R_LEN, HIGH);
+
+  stopMotors();
+  lastCmdTime = millis();
+}
+
+void driveMotor(int rpwmPin, int lpwmPin, int speed) {
+  speed = constrain(speed, -255, 255);
+  if (speed >= 0) {
+    analogWrite(rpwmPin, speed);
+    analogWrite(lpwmPin, 0);
+  } else {
+    analogWrite(rpwmPin, 0);
+    analogWrite(lpwmPin, -speed);
+  }
+}
+
+void stopMotors() {
+  driveMotor(L_RPWM, L_LPWM, 0);
+  driveMotor(R_RPWM, R_LPWM, 0);
+}
+
+void loop() {
+  static String buf = "";
+
+  while (Serial.available()) {
+    char c = Serial.read();
+    if (c == '\n') {
+      int commaIdx = buf.indexOf(',');
+      if (commaIdx > 0) {
+        int lSpeed = buf.substring(0, commaIdx).toInt();
+        int rSpeed = buf.substring(commaIdx + 1).toInt();
+        driveMotor(L_RPWM, L_LPWM, lSpeed);
+        driveMotor(R_RPWM, R_LPWM, rSpeed);
+        lastCmdTime = millis();
+      }
+      buf = "";
+    } else if (c != '\r') {
+      buf += c;
+    }
+  }
+
+  // Failsafe: if PC stops sending (script crash, USB unplug), stop the motors
+  if (millis() - lastCmdTime > CMD_TIMEOUT) {
+    stopMotors();
+  }
+}
