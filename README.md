@@ -65,3 +65,6 @@ The fix was a simple structural brace: adding a support bar between the two moto
   <img src="pictures/BTS7960 high-currentmotorDriver.jpg" alt="SpongeBob Boat">
 </p>
 
+<p align="center">
+  <img src="pictures/BTS 7960.jpg" alt="SpongeBob Boat">
+</p>
