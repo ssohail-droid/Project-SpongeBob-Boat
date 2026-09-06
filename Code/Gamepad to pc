@@ -1,0 +1,85 @@
+"""
+USB gamepad -> Arduino Uno tank drive over serial.
+Left stick Y  = forward/back (throttle)
+Right stick X = turning (steer)
+
+Requires: pip install pygame pyserial
+"""
+
+import time
+import pygame
+import serial
+
+SERIAL_PORT = "COM3"   # <-- change to your Uno's port (Device Manager on Windows,
+                        #     or /dev/ttyACM0 / /dev/ttyUSB0 on Linux)
+BAUD = 115200
+
+DEADZONE = 0.15
+MAX_SPEED = 255
+SEND_HZ = 20
+
+# Right-stick X axis index varies by controller/driver. Xbox controllers on
+# Windows are usually axis 3, some are axis 2. Run with SHOW_AXES=True once
+# to check, then set this.
+LEFT_Y_AXIS = 1
+RIGHT_X_AXIS = 2
+SHOW_AXES = False  # set True to print all axis values for calibration
+
+
+def apply_deadzone(value, dz=DEADZONE):
+    return 0.0 if abs(value) < dz else value
+
+
+def main():
+    pygame.init()
+    pygame.joystick.init()
+
+    if pygame.joystick.get_count() == 0:
+        print("No gamepad detected. Plug it in and try again.")
+        return
+
+    joy = pygame.joystick.Joystick(0)
+    joy.init()
+    print(f"Connected: {joy.get_name()}  axes={joy.get_numaxes()}")
+
+    ser = serial.Serial(SERIAL_PORT, BAUD, timeout=1)
+    time.sleep(2)  # let the Uno finish its reset after serial opens
+    print(f"Serial open on {SERIAL_PORT}")
+
+    clock = pygame.time.Clock()
+
+    try:
+        while True:
+            pygame.event.pump()
+
+            if SHOW_AXES:
+                axes = [round(joy.get_axis(i), 2) for i in range(joy.get_numaxes())]
+                print(axes)
+
+            # Up on most sticks reports -1, so invert for forward = positive
+            throttle = -apply_deadzone(joy.get_axis(LEFT_Y_AXIS))
+            steer = apply_deadzone(joy.get_axis(RIGHT_X_AXIS))
+
+            l_speed = int((throttle - (steer * 0.5)) * MAX_SPEED)
+            r_speed = int((throttle + (steer * 0.5)) * MAX_SPEED)
+
+            l_speed = max(-255, min(255, l_speed))
+            r_speed = max(-255, min(255, r_speed))
+
+            ser.write(f"{l_speed},{r_speed}\n".encode())
+
+            clock.tick(SEND_HZ)
+
+    except KeyboardInterrupt:
+        print("Stopping.")
+    finally:
+        try:
+            ser.write(b"0,0\n")
+        except Exception:
+            pass
+        ser.close()
+        pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
