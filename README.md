@@ -29,3 +29,16 @@ We started with a rectangular aluminum 4040 extrusion frame with a centre beam.
 
 ![SpongeBob Boat](pictures/MotorWithBrak.jpg)
 
+- At this point, we had a pretty rigid chassis for the boat!
+
+![SpongeBob Boat](pictures/BaseFrame.JPG)
+
+- A big problem we had was canting. Canting is when the wheel angles out and bends the bracket
+
+![SpongeBob Boat](pictures/CanterProb.jpg)
+
+- A simple solution was putting a bar between the motor mounts, which reduces canting
+
+![SpongeBob Boat](pictures/CanterSol.jpg)
+
+
